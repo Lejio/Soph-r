@@ -4,9 +4,11 @@ import React from "react";
 import { Button, Spacer } from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const page = () => {
   const [hasAccount, setHasAccount] = useState(false);
+  const router = useRouter();
 
   const handleLoginSwitch = () => {
     if (hasAccount === false) {
@@ -17,7 +19,7 @@ const page = () => {
   };
 
   const loginHandler = async () => {
-    console.log("Loggin in.");
+    router.push("/camera");
   };
   return (
     <div className=" flex flex-col align-middle justify-center h-[100vh] w-[100vw]">

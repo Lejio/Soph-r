@@ -4,15 +4,20 @@ import Onboarding from "../components/Onboarding";
 const page = () => {
   // Define an array of data with different values for name and userInput
   const onboardingData = [
-    { name: "First Name", userInput: "Input 1" },
-    { name: "Middle Name", userInput: "Input 2" },
-    { name: "Last Name", userInput: "Input 3" },
+    { name: "First Name", userInput: "Input 1", placeholder: "(Blank)" },
+    { name: "Middle Name", userInput: "Input 2", placeholder: "(Blank)" },
+    { name: "Last Name", userInput: "Input 3", placeholder: "(Blank)" },
   ];
 
   return (
     <div>
       {onboardingData.map((data, index) => (
-        <Onboarding key={index} name={data.name} userInput={data.userInput} />
+        <Onboarding
+          key={index}
+          name={data.name}
+          userInput={data.userInput}
+          placeholder={data.placeholder}
+        />
       ))}
     </div>
   );
