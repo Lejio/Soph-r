@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 
 const page = async () => {
   return (
-    <div>
+    <div className="">
       <div>Welcome to Sophér</div>
       <div>Let's start with a short questionaire to help you get started</div>
 
