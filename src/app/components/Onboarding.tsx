@@ -6,14 +6,32 @@ import { Button } from "@nextui-org/react";
 type onboardingType = {
   name: string;
   userInput: string;
+  placeholder: string;
+  formType: string;
 };
 
-const Onboarding = ({ name, userInput }: onboardingType) => {
+const Onboarding = ({
+  name,
+  formType,
+  userInput,
+  placeholder,
+}: onboardingType) => {
+  /**add handleInput
+   *
+   *
+   */
+
   return (
     <div>
       <div>
         <h1>{name}</h1>
-        <div>{userInput}</div>
+        <input
+          type={formType}
+          value={userInput}
+          // onChange={handleInput}
+          placeholder={placeholder}
+        />
+
       </div>
 
       <div>
