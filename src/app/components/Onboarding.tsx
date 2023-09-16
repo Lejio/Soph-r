@@ -31,7 +31,6 @@ const Onboarding = ({
           // onChange={handleInput}
           placeholder={placeholder}
         />
-
       </div>
 
       <div>
