@@ -1,6 +1,6 @@
 import React from "react";
-import LoginModal from "./components/LoginModal";
-import LoadingHeader from "./components/LoadingHeader";
+// import LoginModal from "./components/LoginModal";
+// import LoadingHeader from "./components/LoadingHeader";
 import NavButton from "./components/NavButton";
 
 export default async function Home() {

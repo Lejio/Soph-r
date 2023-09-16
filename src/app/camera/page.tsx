@@ -11,7 +11,7 @@ const page = () => {
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: true,
-      resultType: CameraResultType.Uri,
+      resultType: CameraResultType.Base64,
     });
 
     var imageUrl = image.webPath;
