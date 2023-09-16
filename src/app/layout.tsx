@@ -1,8 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Providers } from "./providers";
+import { Inter } from "next/font/google";
 
-export const dynamic = "force-static";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.className}`}>
         <Providers>{children}</Providers>
       </body>
     </html>
