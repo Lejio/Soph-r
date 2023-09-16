@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@nextui-org/react";
 
 const page = async () => {
   return (
@@ -6,7 +7,7 @@ const page = async () => {
       <div>Welcome to Sophér</div>
       <div>Let's start with a short questionaire to help you get started</div>
 
-      <button>Begin</button>
+      <Button>Begin</Button>
     </div>
   );
 };
