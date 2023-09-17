@@ -6,7 +6,7 @@ import { Link } from "@nextui-org/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const LoginPage = () => {
   const [hasAccount, setHasAccount] = useState(false);
   const router = useRouter();
 
@@ -53,4 +53,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default LoginPage;

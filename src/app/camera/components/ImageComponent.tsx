@@ -10,7 +10,7 @@ type userProps = {
   user_setter: React.Dispatch<React.SetStateAction<{}>>;
 };
 
-const ImageComponent = ({ user_metadata, user_setter }: userProps) => {
+const ImageComponent = () => {
   // const images = [];
   const [image, setImage] = useState("");
   const [raw_image, setRaw_Image] = useState("");
@@ -26,9 +26,9 @@ const ImageComponent = ({ user_metadata, user_setter }: userProps) => {
   };
   return (
     <div className=" flex flex-col justify-between align-middle text-center w-[100vw] h-[100vh] p-[10%] pt-[20%]">
-      <ImageHolder src={image} image={raw_image!} user_setter={user_setter} />
+      <ImageHolder src={image} image={raw_image!} />
       <div className="flex flex-row justify-evenly h-[10%]">
-        <Button isIconOnly radius="full" className=" w-16 h-16">
+        <Button isIconOnly radius="full" className=" w-16 h-16 bg-transparent">
           <HiCog size={50} />
         </Button>
         <Spacer y={4} />
@@ -41,7 +41,7 @@ const ImageComponent = ({ user_metadata, user_setter }: userProps) => {
           <HiCamera size={50} />
         </Button>
         <Spacer y={4} />
-        <Button isIconOnly radius="full" className=" w-16 h-16">
+        <Button isIconOnly radius="full" className=" w-16 h-16 bg-transparent">
           <HiUserCircle size={50} />
         </Button>
       </div>

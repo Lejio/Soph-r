@@ -7,35 +7,25 @@ import {
   CardBody,
   CardFooter,
   Button,
+  Spacer,
 } from "@nextui-org/react";
 import Image from "next/image";
-import { HiOutlineBan } from "react-icons/hi";
+import { HiCog, HiUserCircle, HiCamera } from "react-icons/hi";
 
-const ImageHolder = ({
-  src,
-  image,
-  user_setter,
-}: {
-  src: string;
-  image: string;
-  user_setter: React.Dispatch<React.SetStateAction<{}>>;
-}) => {
+const ImageHolder = ({ src, image }: { src: string; image: string }) => {
   const handleSendRequest = async () => {
     const response = await fetch("/api/send_image", {
       method: "POST",
       body: JSON.stringify({ "image-url-base64": image }),
     });
 
-    console.log(image);
-
     const res = await response.json();
     console.log(res);
-    user_setter = res;
   };
 
   return (
     <Card className=" bg-slate-200">
-      <CardBody>
+      <CardBody className=" flex-row">
         <div className=" h-[30rem] w-full">
           {src !== "" ? (
             <Image
@@ -46,7 +36,31 @@ const ImageHolder = ({
               className=" w-full"
             />
           ) : (
-            <HiOutlineBan />
+            <>
+              <Card>
+                <CardBody>
+                  <div className=" flex flex-row">
+                    <HiCog size={25} /> <Spacer x={4} /> Settings
+                  </div>
+                </CardBody>
+              </Card>
+              <Spacer y={4} />
+              <Card>
+                <CardBody>
+                  <div className=" flex flex-row">
+                    <HiCamera size={25} /> <Spacer x={4} /> Camera
+                  </div>
+                </CardBody>
+              </Card>
+              <Spacer y={4} />
+              <Card>
+                <CardBody>
+                  <div className=" flex flex-row">
+                    <HiUserCircle size={25} /> <Spacer x={4} /> Profile
+                  </div>
+                </CardBody>
+              </Card>
+            </>
           )}
         </div>
       </CardBody>
