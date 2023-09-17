@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button } from "@nextui-org/react";
 import Image from "next/image";
-import { CiLocationArrow1 } from "react-icons/ci";
+import ResponseModal from "./ResponseModal";
 
 const style = {
   color: "white",
@@ -26,6 +25,7 @@ const ImageHolder = ({ src, image }: { src: string; image: string }) => {
                 height={100}
                 className=" w-full"
               />
+              <ResponseModal />
               <div className=" flex flex-col justify-center h-10">
                 <p className=" text-gray-500">1/1</p>
               </div>
