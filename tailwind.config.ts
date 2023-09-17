@@ -17,6 +17,7 @@ const config: Config = {
       },
       colors: {
         "sopher-gray": "#868686",
+        "sopher-red": "#DC143C",
       },
     },
   },

@@ -1,33 +1,23 @@
 "use client";
 
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Button,
-  Spacer,
-} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
-import { HiCog, HiUserCircle, HiCamera } from "react-icons/hi";
+import { CiLocationArrow1 } from "react-icons/ci";
+
+const style = {
+  color: "white",
+};
 
 const ImageHolder = ({ src, image }: { src: string; image: string }) => {
-  const handleSendRequest = async () => {
-    const response = await fetch("/api/send_image", {
-      method: "POST",
-      body: JSON.stringify({ "image-url-base64": image }),
-    });
-
-    const res = await response.json();
-    console.log(res);
-  };
-
   return (
-    <Card className=" bg-slate-200">
-      <CardBody className=" flex-row">
-        <div className=" h-[30rem] w-full">
-          {src !== "" ? (
+    <>
+      <div className=" flex flex-col justify-end align-middle h-full w-full ">
+        <div className="py-5 text-2xl">
+          <p className=" font-bold tracking-[.2rem]">Sophér</p>
+        </div>
+        {src !== "" ? (
+          <div className=" flex flex-col">
             <Image
               src={src}
               alt="Image Placeholder"
@@ -35,45 +25,19 @@ const ImageHolder = ({ src, image }: { src: string; image: string }) => {
               height={100}
               className=" w-full"
             />
-          ) : (
-            <>
-              <Card>
-                <CardBody>
-                  <div className=" flex flex-row">
-                    <HiCog size={25} /> <Spacer x={4} /> Settings
-                  </div>
-                </CardBody>
-              </Card>
-              <Spacer y={4} />
-              <Card>
-                <CardBody>
-                  <div className=" flex flex-row">
-                    <HiCamera size={25} /> <Spacer x={4} /> Camera
-                  </div>
-                </CardBody>
-              </Card>
-              <Spacer y={4} />
-              <Card>
-                <CardBody>
-                  <div className=" flex flex-row">
-                    <HiUserCircle size={25} /> <Spacer x={4} /> Profile
-                  </div>
-                </CardBody>
-              </Card>
-            </>
-          )}
-        </div>
-      </CardBody>
-      {src ? (
-        <CardFooter className=" justify-center align-middle">
-          <Button color="success" onClick={handleSendRequest}>
-            Confirm Image
-          </Button>
-        </CardFooter>
-      ) : (
-        <></>
-      )}
-    </Card>
+            <div className=" flex flex-col justify-center h-10">
+              <p className=" text-gray-500">1/1</p>
+            </div>
+          </div>
+        ) : (
+          <div className=" h-full flex flex-col align-middle justify-center">
+            <h2 className=" text-slate-700">
+              Tap on the camera to start scanning.
+            </h2>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
