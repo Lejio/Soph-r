@@ -8,11 +8,10 @@ export async function POST(req: NextRequest) {
     body: JSON.stringify(body),
   });
 
+  const info = await response.json();
+
   return NextResponse.json({
     status: 200,
-    data: {
-      mp3: "fjdajfldjlsakjfldjsakljfldsajlfjdsla",
-      form: "fdajfdosaofjdoisajfidsajofdisaijo",
-    },
+    res_image: info.body,
   });
 }

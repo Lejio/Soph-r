@@ -27,7 +27,7 @@ const ImageComponent = () => {
 
   const takePicture = async () => {
     const image = await Camera.getPhoto({
-      quality: 90,
+      quality: 45,
       allowEditing: false,
       resultType: CameraResultType.Base64,
     });
@@ -39,7 +39,8 @@ const ImageComponent = () => {
     });
 
     const res = await response.json();
-    console.log(res);
+    setImage(`data:image/png;base64,${res.res_image}`);
+    setRaw_Image(res.res_image);
   };
   return (
     <div className=" flex flex-col text-center w-[100vw] h-[100vh]">

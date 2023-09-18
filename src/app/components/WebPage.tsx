@@ -46,7 +46,7 @@ function WebPage() {
               Auto-fill medical forms with virtual scribe
             </p>
             <h1 className="leading-[72px] py-2 text-6xl font-semibold">
-              Save Time, Eliminate Errors, and Focus on What Matters
+              Save Time, Eliminate Errors, and Focus on What Truely Matters
             </h1>
             <p className="py-2 text-lg text-gray-600">
               A HOPHACKS 2023 PROJECT

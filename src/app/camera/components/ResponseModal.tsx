@@ -8,8 +8,7 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-  RadioGroup,
-  Radio,
+  Input,
 } from "@nextui-org/react";
 
 export default function ResponseModal() {
@@ -31,8 +30,9 @@ export default function ResponseModal() {
               </ModalHeader>
               <ModalBody></ModalBody>
               <ModalFooter>
+                <Input label="Message" placeholder="Send a message." />
                 <Button color="danger" onPress={onClose}>
-                  Close
+                  Send
                 </Button>
               </ModalFooter>
             </>
